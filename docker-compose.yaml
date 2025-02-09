@@ -1,0 +1,10 @@
+version: 'v2.31.0'
+services:
+  tgbot:
+    build: .
+    container_name: tgbot
+    restart: always
+    env_file: .env
+    volumes:
+      - ./main.db:/app/main.db
+    command: ["python", "main.py"]
